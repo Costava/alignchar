@@ -1,0 +1,7 @@
+if (foo0) {                                                                   \
+	if (foo1) {                                                               \
+		if (foo2) {                                                           \
+			bar += baz + 5;                                                   \
+		}                                                                     \
+	}                                                                         \
+}
