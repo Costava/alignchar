@@ -3,7 +3,7 @@
 For the given input file, for each line that ends in `TARGET_CHAR`,
 align that character to the `TARGET_COLUMN` position using `FILL_CHAR`
 and output to the given path.
-Lines longer than `TARGET_COLUMN` are unchanged.
+Non-matching lines and lines longer than `TARGET_COLUMN` are unchanged.
 
 Usage:  
 `./alignchar path/to/inputfile path/to/outputfile`
