@@ -34,6 +34,14 @@ test: alignchar
 	./alignchar -i inplace_copy.txt --in-place
 	diff inplace_copy.txt testfiles/inplace_expected.txt
 	rm inplace_copy.txt
+	# Test c, p, and f args
+	./alignchar -i testfiles/cpf.txt -o temp -c ] -p 10 -f F
+	diff temp testfiles/cpf_expected.txt
+	rm temp
+	# Test t arg
+	./alignchar -i testfiles/t.txt -o temp -t 2 -f + -p 6
+	diff temp testfiles/t_expected.txt
+	rm temp
 	# All done
 	echo ALL TESTS PASSED
 
