@@ -5,9 +5,9 @@ $ ./alignchar --help
 alignchar: For the given input file, for each line that ends in the target
            character (Default: '\'), align the target character to the
            target column position (Default: 80. First column is 1) using the
-           fill character (Default: ' '). Non-matching lines, lines longer
-           than 2047, and lines where the target character falls on or
-           after the target column position are unchanged.
+           fill character (Default: ' '). Non-matching lines, lines of
+           length 2048 and greater, and lines where the target character
+           falls on or after the target column position are unchanged.
 
 Usage examples:
   alignchar [options] -i <input file> -o <output file>

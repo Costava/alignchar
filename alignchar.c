@@ -37,14 +37,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 ////////////////////////////////////////////////////////////////////////////////
 
+// Stringify.
+#define STR(s) #s
+// Expand token then stringify.
+#define XSTR(s) STR(s)
+
 // Capacity of buffer used for lines.
 // Lines too long to fit into this buffer are left unchanged.
 #define BUF_CAP 2048
-// (BUF_CAP - 1)
-// -1 because null terminator
-// The max line length (excluding null terminator)
-// for lines that are not ignored.
-#define MAX_LINE_LEN_STR "2047"
 
 #define VERSION_STR "0.2.0"
 
@@ -225,10 +225,10 @@ int print_help(void) {
 "alignchar: For the given input file, for each line that ends in the target\n"
 "           character (Default: '\\'), align the target character to the\n"
 "           target column position (Default: 80. First column is 1) using the\n"
-"           fill character (Default: ' '). Non-matching lines, lines longer\n"
-"           than " MAX_LINE_LEN_STR
-                        ", and lines where the target character falls on or\n"
-"           after the target column position are unchanged.\n"
+"           fill character (Default: ' '). Non-matching lines, lines of\n"
+"           length " XSTR(BUF_CAP)
+                        " and greater, and lines where the target character\n"
+"           falls on or after the target column position are unchanged.\n"
 "\n"
 "Usage examples:\n"
 "  alignchar [options] -i <input file> -o <output file>\n"
